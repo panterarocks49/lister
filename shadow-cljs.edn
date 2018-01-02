@@ -10,7 +10,12 @@
   [kibu/pushy "0.3.8"]
   [bidi "2.1.2"]
   [devcards "0.2.4"]
-  [re-com "2.1.0"]]
+  [re-com "2.1.0"]
+  ;; [cider/cider-nrepl "0.16.0-SNAPSHOT"]
+  ]
+
+ ;; :nrepl
+ ;; {:port 8202}
 
  :builds
  {:app {:target :browser
@@ -46,4 +51,5 @@
               ;; :http-handler shadow.http.push-state/handle
               :http-root "public/devcards"
               :http-port 3449}
-             }}}
+             }
+  }}
