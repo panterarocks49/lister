@@ -1,8 +1,22 @@
 ;; shadow-cljs configuration
-{:source-paths ["src"]
- :dependencies []
- :builds {:app {:output-dir "target/"
-                :asset-path "."
-                :target :browser
-                :modules {:main {:entries [app.main]}}
-                :devtools {:after-load app.main/reload!}}}}
+{:source-paths
+ ["src"]
+
+ :dependencies
+ []
+
+ :builds
+ {:app {:target :browser
+        :output-dir "public/js"
+        :asset-path "/js"
+
+        :modules
+        {:main
+         {:entries [app.main]}}
+
+        :devtools
+        {:before-load app.main/stop
+         :after-load app.main/start
+         :http-root "public"
+         :http-port 8020}
+        }}}
