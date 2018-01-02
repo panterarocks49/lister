@@ -2,13 +2,17 @@
   (:require
    [reagent.core :as r]
    [app.state :as as]
+   [app.routes :as rt]
+   [devcards.core_card :as cards]
    ))
 
-(defn app-routes []
-  )
+(defn home [app-state]
+  [:div "home"])
 
-(defn current-page [app-state]
-  [:div "hello world"])
+(defmulti current-page (fn [app-state] (:page @app-state)))
+(defmethod current-page :home [app-state] home)
+;; (defmethod current-page :devcards [app-state] devcards)
+(defmethod current-page :default [app-state] (fn [_]))
 
 (defn before-load []
   ;; stop is called before any code is reloaded
@@ -28,5 +32,5 @@
   ;; this is called in the index.html and must be exported
   ;; so it is available even in :advanced release builds
   (js/console.log "init")
-  (app-routes)
+  (rt/app-routes as/app-state)
   (after-load))

@@ -1,5 +1,11 @@
 {
   "devDependencies": {
     "shadow-cljs": "^2.0.122"
+  },
+  "dependencies": {
+    "create-react-class": "^15.6.2",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "showdown": "^1.8.6"
   }
 }
