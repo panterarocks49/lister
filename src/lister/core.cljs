@@ -1,8 +1,8 @@
-(ns app.core
+(ns lister.core
   (:require
    [reagent.core :as r]
-   [app.state :as as]
-   [app.routes :as rt]
+   [lister.state :as as]
+   [lister.routes :as rt]
    [devcards.core_card :as cards]
    ))
 

@@ -1,4 +1,4 @@
-(ns app.routes
+(ns lister.routes
   (:require
    [bidi.bidi :as bidi]
    [pushy.core :as pushy]))

@@ -18,21 +18,21 @@
  ;; {:port 8202}
 
  :builds
- {:app {:target :browser
-        :output-dir "public/app/js/compiled"
-        :asset-path "/js/compiled"
+ {:lister {:target :browser
+           :output-dir "public/lister/js/compiled"
+           :asset-path "/js/compiled"
 
-        :modules
-        {:main
-         {:entries [app.core]}}
+           :modules
+           {:main
+            {:entries [lister.core]}}
 
-        :devtools
-        {:before-load app.core/before-load
-         :after-load app.core/after-load
-         :http-handler shadow.http.push-state/handle
-         :http-root "public/app"
-         :http-port 8020}
-        }
+           :devtools
+           {:before-load lister.core/before-load
+            :after-load lister.core/after-load
+            :http-handler shadow.http.push-state/handle
+            :http-root "public/lister"
+            :http-port 8020}
+           }
 
   :devcards {:target :browser
              :output-dir "public/devcards/js/compiled"
